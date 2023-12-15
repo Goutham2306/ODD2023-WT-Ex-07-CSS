@@ -208,5 +208,213 @@ Testing: To observe the changes based on orientation, you can view the webpage o
 </html>
 ```
 
+## OUTPUT:
+# Webpage's background colour is purple when opened on landscape orientation (pc):
+
+![Screenshot 2023-12-15 055010](https://github.com/Goutham2306/ODD2023-WT-Ex-07-CSS/assets/138971154/073eda17-d06a-4acf-9cb9-554382fa3f32)
+
+# Webpage's background colour changes to light green when opened on portriat orientation (mobile phone):
+![WhatsApp Image 2023-12-15 at 05 52 02_53ac7255](https://github.com/Goutham2306/ODD2023-WT-Ex-07-CSS/assets/138971154/22614b22-e893-42f7-a2a7-dfce4b1e055f)
 
 
+## Objective 4:
+# Responsive Typography using CSS Media queries
+# Step-1:
+The HTML document starts with the usual declaration.The tag specifies the language as English (lang="en").The section includes meta tags for character set and viewport settings. The title of the webpage is set to "Color Scheme."
+
+# Step-2:
+CSS Styles: The CSS styles are defined inside a <style> tag in the section.Default styles for all devices are specified, including a base font size of 16px, a line height of 1.6, and a margin of 20px for the body.
+
+# Step-3:
+Media Queries: There are two media queries used to make the typography responsive to different screen widths: The first media query (@media screen and (min-width: 600px) and (max-width: 899px)) targets devices with a width between 600px and 899px. It adjusts the font size to 18px and the line height to 1.5 for the body. The second media query (@media screen and (min-width: 900px)) targets devices with a width of 900px and above. It adjusts the font size to 20px and the line height to 1.4 for the body.
+
+# Step-4:
+Responsive Typography: The responsive typography is achieved by using media queries to adjust the font size and line height based on the screen width.As the screen width changes, the font size and line height of the text in the body will dynamically adapt to provide a better reading experience on different devices.
+
+# Step-5:
+Testing: You can test the responsiveness of the typography by resizing the browser window or using browser developer tools to simulate different device widths.Observe how the font size and line height change according to the specified media query conditions.
+
+## CODE:
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style type="text/css">
+    /* Default styles for all devices */
+    body {
+      font-size: 16px;
+      line-height: 1.6;
+      margin: 20px;
+    }
+
+    /* Media query for devices with width between 600px and 899px */
+    @media screen and (min-width: 600px) and (max-width: 899px) {
+      body {
+        font-size: 18px;
+        line-height: 1.5;
+      }
+    }
+
+    /* Media query for devices with width 900px and above */
+    @media screen and (min-width: 900px) {
+      body {
+        font-size: 20px;
+        line-height: 1.4;
+      }
+    }
+  </style>
+  <title>Media Queries 4</title>
+</head>
+<body>
+<p>Sai is the topper of University</p>
+<p>Font size and line height adapt to provide an optimal reading experience on devices of all sizes when we use media queries in css</p>
+</body>
+</html>
+```
+## OUTPUT:
+# If the user open it larger devices like pc:
+
+![Screenshot 2023-12-15 055047](https://github.com/Goutham2306/ODD2023-WT-Ex-07-CSS/assets/138971154/570f5fdd-c858-4943-936f-e3a720e43620)
+
+# If user open it in mobile phones:
+
+![WhatsApp Image 2023-12-15 at 05 52 02_c19d9af8](https://github.com/Goutham2306/ODD2023-WT-Ex-07-CSS/assets/138971154/0298a066-d276-4f38-8b5a-c032a720de20)
+
+## Objective 5:
+# Print-friendly styles for web pages using CSS media quries
+# Step-1:
+The HTML document starts with the usual declaration.The tag specifies the language as English (lang="en").The section includes meta tags for character set and viewport settings. The title of the webpage is set to "Color Scheme."
+
+# Step-2:
+CSS Styles: The CSS styles are defined inside a <style> tag in the section.Default styles for the webpage are specified, including a light gray background for the body, dark gray text color, and a blue color for links. Non-Essential Element Styling: The class .non-essential is defined with a display: block; property, making elements with this class visible by default.
+
+# Step-3:
+Media Query for Print Styles: A media query (@media print) is used to define styles specifically for printing.Inside the print media query, background color, text color, and link color are adjusted to be more suitable for printing (white background, black text, and cyan links).The .non-essential class has a display: none; property within the print media query, hiding non-essential elements when printing.
+
+# Step-4:
+Print-friendly Styles: The purpose of this code is to provide a print-friendly version of the webpage by adjusting styles when the page is printed.The print styles are designed to optimize the content for a printed document, with changes to background color, text color, link color, and the visibility of non-essential elements.
+
+# Step-5:
+Testing Print Styles: You can test the print-friendly styles by using the browser's print functionality or a print preview. Observe how the styles change when preparing to print the webpage.
+
+## CODE:
+```
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Media Queries 5</title>
+  <style>
+    /* Default styles for the webpage */
+    body {
+      background-color: #f4f4f4; /* Light gray background */
+      color: #333; /* Dark gray text color */
+    }
+
+    a {
+      color: #007bff; /* Blue link color */
+    }
+
+    .non-essential {
+      display: block; /* Visible by default */
+    }
+
+    /* Media query for print styles */
+    @media print {
+      body {
+        background-color: #fff; /* White background for printing */
+        color: #000; /* Black text color for printing */
+      }
+
+      a {
+        color: #17a2b8; /* Cyan link color for printing */
+      }
+
+      .non-essential {
+        display: none; /* Hide non-essential elements for printing */
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <p>Sai is very decent guy</p>
+  <p>We can Use the print-friendly version for a clean and efficient printout using media queries for print mode</p>
+  <p class="non-essential">All the non essential elements will not be displayed when used media queries</p>
+</body>
+
+</html>
+```
+## OUTPUT:
+# When we open webpage in view-mode:
+![Screenshot 2023-12-15 055102](https://github.com/Goutham2306/ODD2023-WT-Ex-07-CSS/assets/138971154/803f7033-dac7-479b-9d2c-78b01851ad99)
+
+# When we set to get print of webpage:
+![Screenshot 2023-12-15 055118](https://github.com/Goutham2306/ODD2023-WT-Ex-07-CSS/assets/138971154/22473c1c-7fd7-418c-9df9-ee227535ee96)
+
+## Objective 6:
+# Dark mode Implementation using CSS media queries
+# Step-1:
+The HTML document starts with the usual declaration.The tag specifies the language as English (lang="en").The section includes meta tags for character set and viewport settings. The title of the webpage is set to "Color Scheme."
+
+# Step-2:
+CSS Styles: The CSS styles are defined inside a <style> tag in the section.Default styles for the webpage are specified, including a light gray background for the body and dark gray text color.
+
+# Step-3:
+Dark Mode Media Query: A media query (@media (prefers-color-scheme: dark)) is used to detect the user's system preference for dark mode.Inside the dark mode media query, background color and text color are adjusted to create a dark mode appearance (black background and white text).
+
+# Step-4
+Adaptive Color Scheme: The purpose of this code is to create an adaptive color scheme that changes based on the user's system preference for dark mode.The default color scheme is set, and if the user has a preference for dark mode, the styles inside the dark mode media query are applied.
+
+# Step-5:
+Testing Dark Mode: You can test the dark mode by toggling your system's dark mode setting (if your system supports it). Alternatively, you can use browser developer tools to simulate a dark mode preference.Observe how the color scheme of the webpage changes when dark mode is enabled.
+
+## CODE:
+```
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<style>
+/* Default Color Scheme */
+body {
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+/* Dark Mode Preference */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #000;
+    color: #fff;
+  }
+}
+
+</style>
+<body>
+<p>Welcome to Saveetha Engineering College</p>
+<p>This webpage is visible in light mode if your device is set to light theme</p>
+
+<p>This webpage is visible in Dark mode if your device is set to Dark theme</p>
+
+</body>
+</html>
+```
+## OUTPUT:
+# Webpage is Displayed in light mode when device is running on light theme:
+
+![Screenshot 2023-12-15 055141](https://github.com/Goutham2306/ODD2023-WT-Ex-07-CSS/assets/138971154/3aa9a8be-ebe7-4e1b-acdc-f95397af3f7d)
+
+# Webpage is Displayed in dark mode when deivce is running on dark mode
+
+![Screenshot 2023-12-15 055159](https://github.com/Goutham2306/ODD2023-WT-Ex-07-CSS/assets/138971154/f89bf1e8-798d-4926-bfcf-791bd8147929)
+
+## RESULT:
+# Therefore, functionalities of CSS media queries are clearly demonstrated using examples for each type.
+
+## DEVELOPED BY: Goutham.K
+## REGISTER NUMBER: 212223110019
